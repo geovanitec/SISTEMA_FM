@@ -16,6 +16,7 @@ public class PANTALLA_INICIAL extends javax.swing.JFrame {
      */
     public PANTALLA_INICIAL() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -32,7 +33,9 @@ public class PANTALLA_INICIAL extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuEmpleados = new javax.swing.JMenuItem();
         jMenuClientes = new javax.swing.JMenuItem();
-        jMenuCatalogo = new javax.swing.JMenuItem();
+        jMenuCatalogos = new javax.swing.JMenu();
+        jMenuDvd = new javax.swing.JMenuItem();
+        jMenuVideos = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,10 +62,32 @@ public class PANTALLA_INICIAL extends javax.swing.JFrame {
         jMenu1.add(jMenuEmpleados);
 
         jMenuClientes.setText("CLIENTES");
+        jMenuClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuClientesActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuClientes);
 
-        jMenuCatalogo.setText("CATALOGO");
-        jMenu1.add(jMenuCatalogo);
+        jMenuCatalogos.setText("CATALOGO");
+
+        jMenuDvd.setText("DVD");
+        jMenuDvd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuDvdActionPerformed(evt);
+            }
+        });
+        jMenuCatalogos.add(jMenuDvd);
+
+        jMenuVideos.setText("VIDEOS");
+        jMenuVideos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuVideosActionPerformed(evt);
+            }
+        });
+        jMenuCatalogos.add(jMenuVideos);
+
+        jMenu1.add(jMenuCatalogos);
 
         jMenuBar1.add(jMenu1);
 
@@ -95,6 +120,30 @@ public class PANTALLA_INICIAL extends javax.swing.JFrame {
 
 // TODO add your handling code here:
     }//GEN-LAST:event_jMenuEmpleadosActionPerformed
+
+    private void jMenuClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuClientesActionPerformed
+
+        CLIENTES ventana = new CLIENTES ();
+         jDesktopPane1.add(ventana);
+
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_jMenuClientesActionPerformed
+
+    private void jMenuVideosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuVideosActionPerformed
+        // TODO add your handling code here:
+        
+      REGISTRO_VIDEOS ventana= new REGISTRO_VIDEOS ();
+        jDesktopPane1.add(ventana);
+        
+    }//GEN-LAST:event_jMenuVideosActionPerformed
+
+    private void jMenuDvdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuDvdActionPerformed
+ REGISTRO_DVD ventana= new REGISTRO_DVD ();
+        jDesktopPane1.add(ventana);
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_jMenuDvdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,8 +185,10 @@ public class PANTALLA_INICIAL extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuCatalogo;
+    private javax.swing.JMenu jMenuCatalogos;
     private javax.swing.JMenuItem jMenuClientes;
+    private javax.swing.JMenuItem jMenuDvd;
     private javax.swing.JMenuItem jMenuEmpleados;
+    private javax.swing.JMenuItem jMenuVideos;
     // End of variables declaration//GEN-END:variables
 }
